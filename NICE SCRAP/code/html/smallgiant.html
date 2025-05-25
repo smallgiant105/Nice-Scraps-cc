@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sir ChizzBoy | Small Giant Inv cc</title>
+
+  <!-- AOS CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet"/>
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: #121212;
+      color: #fefefe;
+      padding: 2em;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #FFD93D;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #fff580;
+    }
+
+    header, section {
+      background-color: rgba(255, 255, 255, 0.05);
+      margin-bottom: 2em;
+      padding: 2em;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(6px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    section:hover, header:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    h1, h2, h3 {
+      color: #FFD93D;
+      letter-spacing: 0.5px;
+    }
+
+    .slogan {
+      font-style: italic;
+      text-align: center;
+      color: #ccc;
+      margin-bottom: 1em;
+      font-size: 20px;
+    }
+
+    img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+      margin-bottom: 1em;
+      transition: transform 0.4s ease, filter 0.3s ease;
+    }
+
+    img:hover {
+      transform: perspective(600px) rotateY(3deg) rotateX(1.5deg);
+      filter: brightness(1.2);
+    }
+
+    /* Updated Section Image Style */
+    section img {
+      width: auto;
+      max-width: 80%;
+      height: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+      margin-bottom: 1em;
+      transition: transform 0.4s ease, filter 0.3s ease;
+    }
+
+    button {
+      background-color: #FFD93D;
+      color: #222;
+      padding: 0.8em 1.5em;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #fff580;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(255, 217, 61, 0.3);
+    }
+
+    nav {
+      background: #1a1a1a;
+      padding: 15px 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-radius: 10px;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      margin: 0 10px;
+      font-weight: 500;
+    }
+
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      justify-content: center;
+    }
+
+    .info-card {
+      flex: 1 1 300px;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 1.5em;
+      border-radius: 10px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    ul li::before {
+      content: "🧀 ";
+    }
+
+    .carousel-card {
+      min-width: 200px;
+      background: rgba(255,255,255,0.05);
+      padding: 1em;
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .carousel-card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3em;
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .card-container {
+        flex-direction: column;
+      }
+      img {
+        max-height: 220px;
+      }
+    }
+
+    .main-content {
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(247, 238, 238, 0.1);
+      text-align: center;
+    }
+
+    /* Image Loader Styling */
+    .image-loader {
+      display: block;
+      margin: 20px auto;
+      width: 50px;
+      height: 50px;
+      border: 5px solid transparent;
+      border-radius: 50%;
+      border-top-color: #FFD93D;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Mouse + Cheese Fun Animation */
+    .animated-mouse-cheese {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .mouse {
+      position: absolute;
+      bottom: 8px;
+      left: -20px;
+      font-size: 28px;
+      animation: sneak 8s ease-in-out infinite;
+      z-index: 1;
+    }
+
+    .cheese {
+      position: absolute;
+      bottom: 10px;
+      right: 60px;
+      font-size: 38px;
+      z-index: 1;
+    }
+
+    @keyframes sneak {
+      0% {
+        left: -50px;
+        transform: rotate(0deg);
+      }
+      50% {
+        left: 60%;
+        transform: rotate(-5deg);
+      }
+      100% {
+        left: -50px;
+        transform: rotate(0deg);
+      }
+    }
+
+    .who-we-are-images {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+    margin-bottom: 1em;
+  }
+
+  .who-we-are-images img {
+    width: 50%; /* Adjust this to control the size of the images */
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(255, 250, 250, 0.4);
+    transition: transform 0.4s ease;
+  }
+
+  .who-we-are-images img:hover {
+    transform: perspective(600px) rotateY(15deg) rotateX(5.5deg);
+  }
+
+  </style>
+</head>
+
+<body>
+<div class="main-content">
+  <nav data-aos="fade-down" data-aos-delay="0">
+    <div style="color: #FFD93D; font-weight: bold;">CHizzBoy</div>
+    <div>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#support">Support</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <header data-aos="fade-up" data-aos-delay="100">
+    <h1>WEB DEVELOPER</h1>
+    <img src="/pexels-sebastiaan9977-1097456.jpg" alt="Hero Banner" data-aos="zoom-in" data-aos-delay="200"/>
+    <p data-aos="fade-up" data-aos-delay="300">Namibian coder, dancer, caller-connector, buy/sell expert, food lover, and chill master.</p>
+    <button onclick="alert('Let’s build your website!')" data-aos="zoom-in" data-aos-delay="400">Get Your Website</button>
+  </header>
+
+  <section data-aos="fade-up" data-aos-delay="100" class="animated-mouse-cheese">
+    <h2 data-aos="fade-up" data-aos-delay="150">Sir | CHizzBoy </h2>
+    <div class="who-we-are-images">
+      <img src="/IMG_20230913_030712_365.jpg" alt="About Image 1" data-aos="zoom-in" data-aos-delay="200"/>
+    </div>
+    <p class="slogan" data-aos="fade-up" data-aos-delay="250">"Code. Connect. Create."</p>
+    <p data-aos="fade-up" data-aos-delay="300">Small Giant Inv cc is a passion-driven Namibian brand blending tech, creativity, and hustle.</p>
+    <div class="cheese">🧀</div>
+    <div class="mouse">🐭</div>
+  <a href="/survey.html"> 
+     <button onclick="alert('Let’s build your website!')" data-aos="zoom-in" data-aos-delay="400">Lets Play</button>
+    </a>
+    <div class="cheese">🧀</div>
+  </section>
+
+  <div class="card-container">
+    <div class="info-card" data-aos="fade-up" data-aos-delay="100">
+      <h3>Our Mission</h3>
+      <p>To empower communities through digital solutions and creative collaboration.</p>
+    </div>
+    <div class="info-card" data-aos="fade-up" data-aos-delay="300">
+      <h3>Our Vision</h3>
+      <p>Building a future where tech meets local flavor and culture leads innovation.</p>
+    </div>
+  </div>
+
+  <section data-aos="fade-up" data-aos-delay="100">
+    <h2 data-aos="fade-up" data-aos-delay="150">Benefits For You</h2>
+    <ul>
+      <li data-aos="fade-left" data-aos-delay="200">Creative Web Development turns your business into a virtual shop</li>
+      <li data-aos="fade-left" data-aos-delay="250">Real Talk, Real Connection, Real Money</li>
+      <li data-aos="fade-left" data-aos-delay="300">Fast & Affordable Solutions</li>
+      <li data-aos="fade-left" data-aos-delay="350">Elegant & Simple Designs</li>
+      <li data-aos="fade-left" data-aos-delay="400">Transparent & One-Time Fee</li>
+    </ul>
+  </section>
+
+  <section id="portfolio" data-aos="fade-up" data-aos-delay="100">
+    <h2>Projects | Works</h2>
+    <p>Explore some of our exciting builds and collaborations.</p>
+    <div style="display: flex; gap: 1em; overflow-x: auto;">
+      <div class="carousel-card" data-aos="zoom-in" data-aos-delay="200">
+        <img src="/pexels-diva-plavalaguna-6147381.jpg" alt="Project 1" />
+        <p>Chizzy Studio <br><em>www.chizzystudio.com</em></p>
+      </div>
+      <div class="carousel-card" data-aos="zoom-in" data-aos-delay="300">
+        <img src="/pexels-divinetechygirl-1181461.jpg" alt="Project 2" />
+        <p>Chizzy Tube <br><em>www.chizzytube.com</em></p>
+      </div>
+      <div class="carousel-card" data-aos="zoom-in" data-aos-delay="400">
+        <img src="/pexels-a-darmel-7743253.jpg" alt="Project 3" />
+        <p>Chizzy E-Learning <br><em>www.chizzye-learning.com</em></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" data-aos="fade-up" data-aos-delay="100">
+    <h2>Contact</h2>
+    <img src="/pexels-morningtrain-18105.jpg" alt="About Image 1" data-aos="zoom-in" data-aos-delay="200"/>
+    <p>Email: <a href="mailto:smallgiant105@gmail.com">smallgiant105@gmail.com</a></p>
+    <p>Phone: +264-81-264-3563</p>
+  </section>
+
+  <section data-aos="fade-left" data-aos-delay="100">
+    <h2>Subscribe</h2>
+    <img src="/IMG_20230913_030712_365.jpg" alt="About Image 1" data-aos="zoom-in" data-aos-delay="200"/>
+    <br>
+    <button onclick="alert('Thanks for subscribing!')" data-aos="zoom-in" data-aos-delay="300">Subscribe</button>
+
+    <input type="email" placeholder="Enter your email" style="padding:10px; border-radius:6px; max-width:300px; width:100%; margin-bottom:10px;" data-aos="fade-up" data-aos-delay="200">
+    <br>
+   <br>
+    <img src="/Small Giant - Vehicle Branding.png" alt="About Image 1" data-aos="zoom-in" data-aos-delay="200"/>
+    
+  </section>
+
+  <footer>
+    © 2025 Small Giant Inv cc. All rights reserved.
+  </footer>
+</div>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,
+    duration: 800,
+    easing: 'ease-out',
+    offset: 120
+  });
+</script>
+</body>
+</html>
